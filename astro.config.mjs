@@ -12,6 +12,12 @@ import config from "./src/config/config.json";
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
+  output: "static",
+  server: { 
+    port: 8010,
+    host: true,
+    allowedHosts: ['new.manubanyuputih.id']
+   },
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   vite: { plugins: [tailwindcss()] },
   integrations: [
