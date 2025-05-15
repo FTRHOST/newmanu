@@ -1,6 +1,7 @@
 ---
 banner:
-  title: "Selamat datang di MA NU 01 Banyuputih."
+  title: "Halo, Selamat Datang!"
+  sekolah: "We Are MANSABA👋🏻"
   content: "Sekolah yang ramah anak hehe."
   image: /images/banner-img.png
   button:

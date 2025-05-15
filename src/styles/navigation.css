@@ -1,9 +1,13 @@
 header {
-  @apply sticky top-0 z-50 bg-white py-6 transition-all duration-300 lg:bg-transparent;
+  @apply sticky top-0 z-50 bg-[#ededed] py-6 transition-all duration-300 lg:bg-transparent;
 }
 
-.header-sticky {
+/* .header-sticky {
   @apply bg-white shadow;
+} */
+
+.header-sticky {
+  @apply bg-[#ededed] shadow;
 }
 
 /* navbar items */
@@ -28,6 +32,7 @@ header {
 
   &.active {
     @apply relative;
+    @apply font-semibold;
     @apply text-primary; /* UBAH DISINI: ganti warna font menjadi hijau */
 
     /* &::after {

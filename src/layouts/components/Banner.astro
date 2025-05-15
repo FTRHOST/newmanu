@@ -2,42 +2,73 @@
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 const { banner } = Astro.props;
-const { title, button, image, content } = banner;
+const { title, sekolah, button, image, content } = banner;
+import AnimatedContent from '@/components/react/AnimatedContent/AnimatedContent';
 ---
 
 <section class="section banner relative">
   <div class="container">
     <div class="row items-center">
+
       <div class="lg:col-6">
-        <h1 class="banner-title" set:html={markdownify(title)} />
+        <AnimatedContent
+        distance={60}
+        direction="vertical"
+        reverse={false}
+        config={{ tension: 50, friction: 25 }}
+        initialOpacity={0}
+        animateOpacity={true}
+        scale={1.0}
+        threshold={0.1}
+        client:load
+      >
+      <Image
+      class="w-full object-contain"
+      alt="banner"
+      src={image}
+      width={603}
+      height={396}
+    />
+    </AnimatedContent>
 
-        <p class="mt-6" set:html={markdownify(content)} />
 
-        {
-          button.enable && (
-            <a class="btn btn-white mt-8" href={button.link}>
-              {button.label}
-            </a>
-          )
-        }
       </div>
+
       <div class="lg:col-6">
-        <Image
-          class="w-full object-contain"
-          alt="banner"
-          src={image}
-          width={603}
-          height={396}
-        />
+        <AnimatedContent
+        distance={60}
+        direction="vertical"
+        reverse={false}
+        config={{ tension: 50, friction: 25 }}
+        initialOpacity={0}
+        animateOpacity={true}
+        scale={1.0}
+        threshold={0.1}
+        client:load
+      >
+        <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(title)} />
+        <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(sekolah)} />
+        <p class="mt-6 lg:text-left md:text-center sm:text-center" set:html={markdownify(content)} />
+
+          <div class="justify-content-center align-content-center">
+            {
+              button.enable && (
+                <a class="btn btn-white mt-8" href={button.link}>
+                  {button.label}
+                </a>
+              )
+            }
+          </div>
+        </AnimatedContent>
       </div>
     </div>
   </div>
 
-  <Image
-    class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
+  <!-- <Image
+    class="banner-shape absolute -top- right-0 -z-[1] w-full max-w-[30%]"
     alt="banner"
     src="/images/banner-shape.png"
     width={496}
     height={466}
-  />
+  /> -->
 </section>

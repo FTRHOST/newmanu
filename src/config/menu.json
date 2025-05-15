@@ -32,18 +32,18 @@
 
         {
           "name": "Misal",
-          "url": "/a"
+          "url": "/b"
         },
 
         {
           "name": "Misal",
-          "url": "/a"
+          "url": "/c"
         }
       ]
     },
     {
       "name": "Contact",
-      "url": "/a"
+      "url": "/d"
     },
     {
       "name": "Us",
