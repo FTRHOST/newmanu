@@ -1,0 +1,72 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Profile",
+      "url": "/profile"
+    },
+    {
+      "name": "Akademik",
+      "url": "/akademik"
+    },
+    {
+      "name": "Siswa",
+      "url": "/siswa"
+    },
+    {
+      "name": "Alumni",
+      "url": "/alumni"
+    },
+    {
+      "name": "Galery",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Misal",
+          "url": "/a"
+        },
+
+        {
+          "name": "Misal",
+          "url": "/a"
+        },
+
+        {
+          "name": "Misal",
+          "url": "/a"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "/a"
+    },
+    {
+      "name": "Us",
+      "url": "/us"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Profile",
+      "url": "/profile"
+    },
+    {
+      "name": "Akademik",
+      "url": "/akademik"
+    },
+    {
+      "name": "Siswa",
+      "url": "/siswa"
+    }
+  ]
+}

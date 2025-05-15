@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "MA NU 01 BANYUPUTIH",
+    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "147",
+    "logo_height": "31",
+    "logo_text": "Pinwheel"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100
+  },
+
+  "call_to_action": {
+    "title": "Helping teams in the world with focus",
+    "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "button": {
+      "label": "Download The Theme",
+      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+    }
+  },
+
+  "params": {
+    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "email": "manubanyuputih@gmail.com",
+    "location": "Jl. Lapangan 9A Banyuputih Batang",
+    "phone": "0285 - 6689045",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2025 by [Fathir](https://fathir.vercel.app)"
+  },
+
+  "metadata": {
+    "meta_author": "Petwir",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Petwir"
+  }
+}
