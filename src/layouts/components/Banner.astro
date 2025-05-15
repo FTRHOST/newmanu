@@ -3,7 +3,6 @@ import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 const { banner } = Astro.props;
 const { title, sekolah, button, image, content } = banner;
-import AnimatedContent from '@/components/react/AnimatedContent/AnimatedContent';
 ---
 
 <section class="section banner relative">
@@ -11,17 +10,6 @@ import AnimatedContent from '@/components/react/AnimatedContent/AnimatedContent'
     <div class="row items-center">
 
       <div class="lg:col-6">
-        <AnimatedContent
-        distance={60}
-        direction="vertical"
-        reverse={false}
-        config={{ tension: 50, friction: 25 }}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1.0}
-        threshold={0.1}
-        client:load
-      >
       <Image
       class="w-full object-contain"
       alt="banner"
@@ -29,23 +17,11 @@ import AnimatedContent from '@/components/react/AnimatedContent/AnimatedContent'
       width={603}
       height={396}
     />
-    </AnimatedContent>
 
 
       </div>
 
       <div class="lg:col-6">
-        <AnimatedContent
-        distance={60}
-        direction="vertical"
-        reverse={false}
-        config={{ tension: 50, friction: 25 }}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1.0}
-        threshold={0.1}
-        client:load
-      >
         <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(title)} />
         <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(sekolah)} />
         <p class="mt-6 lg:text-left md:text-center sm:text-center" set:html={markdownify(content)} />
@@ -59,7 +35,7 @@ import AnimatedContent from '@/components/react/AnimatedContent/AnimatedContent'
               )
             }
           </div>
-        </AnimatedContent>
+
       </div>
     </div>
   </div>
