@@ -31,12 +31,12 @@ header {
   @apply block p-3 py-2 text-[16px] font-medium text-text-dark transition md:px-2 lg:inline-block;
 
   &.active {
-    @apply relative;
-    @apply font-semibold;
-    @apply text-primary; /* UBAH DISINI: ganti warna font menjadi hijau */
+    @apply relative font-semibold bg-gradient-to-br from-[#2A7B9B] to-[#57C785] text-transparent bg-clip-text;
+
+    /* @apply text-primary; */
 
     /* &::after {
-      @apply absolute bottom-0 left-2 right-2 h-0.5 bg-primary content-[''];
+      @apply absolute bottom-0 left-2 right-2 h-0.5 bg-gradient content-[''];
     } */
   }
 }
