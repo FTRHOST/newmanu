@@ -1,5 +1,6 @@
 header {
   @apply sticky top-0 z-50 bg-[#ededed] py-6 transition-all duration-300 lg:bg-transparent;
+  
 }
 
 /* .header-sticky {
@@ -7,13 +8,19 @@ header {
 } */
 
 .header-sticky {
-  @apply bg-[#ededed] shadow;
+  @apply backdrop-blur-lg bg-[#ededed]/80 shadow;
+  /* top: 0; */
+  /* bg-[#ededed] shadow; */
+  /* backdrop-filter: blur(8px);
+  background-color: rgba(237, 237, 237, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 /* navbar items */
 .navbar {
   @apply relative flex flex-wrap items-center justify-between;
 }
+
 
 .navbar-brand {
   @apply text-xl font-semibold text-text-dark;
