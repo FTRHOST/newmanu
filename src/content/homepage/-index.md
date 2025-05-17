@@ -3,7 +3,7 @@ banner:
   title: "Halo, Selamat Datang!"
   sekolah: "We Are MANSABA👋🏻"
   content: "Sekolah yang ramah anak hehe."
-  image: /images/banner-img.png
+  image: /images/banner-img.webp
   button:
     enable: true
     label: Yuu daftar
