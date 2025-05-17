@@ -6,6 +6,12 @@ body {
   @apply bg-body bg-[url('/images/body-bg.svg')] bg-repeat font-primary font-normal leading-relaxed text-text overflow-x-hidden; background-color: #ededed;
 }
 
+/* * {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #007bff;
+} */
+
 h1,
 h2,
 h3,

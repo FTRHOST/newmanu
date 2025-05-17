@@ -53,7 +53,12 @@ const calculateFontSizes = (base, scale) => {
   let currentSize = scale;
   for (let i = 6; i >= 1; i--) {
     sizes[`h${i}`] = `${currentSize}rem`;
-    sizes[`h${i}-sm`] = `${currentSize * 0.9}rem`;
+    // Modify this line to set the desired font size for h1-sm
+    if (i === 1) {
+      sizes[`h${i}-sm`] = `1.687386rem`;
+    } else {
+      sizes[`h${i}-sm`] = `${currentSize * 0.9}rem`;
+    }
     currentSize *= scale;
   }
   sizes.base = `${base}px`;

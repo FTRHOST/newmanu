@@ -22,14 +22,14 @@ const { title, sekolah, button, image, content } = banner;
       </div>
 
       <div class="lg:col-6">
-        <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(title)} />
-        <h1 class="banner-title lg:text-left md:text-center sm:text-center" set:html={markdownify(sekolah)} />
-        <p class="mt-6 lg:text-left md:text-center sm:text-center" set:html={markdownify(content)} />
+        <h1 class="banner-title lg:text-left text-center" set:html={markdownify(title)} />
+        <h1 class="banner-title lg:text-left text-center" set:html={markdownify(sekolah)} />
+        <p class="mt-6 lg:text-left text-center" set:html={markdownify(content)} />
 
-          <div class="justify-content-center align-content-center">
+          <div class="lg:text-left text-center">
             {
               button.enable && (
-                <a class="btn btn-white mt-8" href={button.link}>
+                <a class="btn btn-primary mt-8" href={button.link}>
                   {button.label}
                 </a>
               )
