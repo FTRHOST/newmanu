@@ -1,25 +1,32 @@
 ---
-import { markdownify } from "@/lib/utils/textConverter"; // Import fungsi untuk mengubah Markdown ke HTML
-import { Image } from "astro:assets"; // Import komponen Image dari Astro untuk optimasi gambar
-
-// Mendapatkan props yang diteruskan ke komponen ini
-const { videop } = Astro.props;
 // Import komponen VideoComponent untuk menampilkan video
 import VideoComponent from "@/layouts/function-components/VideoComponent";
-
+import { AiFillCheckCircle } from "react-icons/ai";
 ---
 
 <section class="section videoProfile relative">
     <div class="container">
-        <div class="row items-center">
+        <div class="row ">
             <div class="lg:col-6">
                 <h1 class="banner-title lg:text-left text-center">
                     Mengapa harus kita?
                 </h1>
-                <p class="mt-6 lg:text-justify text-center">
+                <p class="mt-6 lg:text-left text-center">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, beatae eos. Excepturi minima in numquam voluptates, mollitia, vero nulla ab id modi quisquam exercitationem! A possimus doloribus quia dolorum architecto?
                 </p>
+                <ul class="mt-6">
+                    <li class="mb-2 flex items-center rounded px-4">
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        Fasilitas lengkap
+                    </li>
+                    <li class="mb-2 flex items-center rounded px-4">
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        Baju free 4 setelan
+                    </li>
+                </ul>
+                
         </div>
+        
 
         <div class="lg:col-6">
             <VideoComponent

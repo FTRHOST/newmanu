@@ -1,12 +1,4 @@
 ---
-banner:
-  title: "Halo, Selamat Datang!<br>We Are MANSABA👋🏻"
-  content: "Madrasah hebat pencetak generasi - generasi hebat"
-  image: /images/banner-img.webp
-  button:
-    enable: true
-    label: Yuu daftar
-    link: "https://ppdb.manubanyuputih.id"
 
 
 ##key features

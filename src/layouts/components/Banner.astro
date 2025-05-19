@@ -1,8 +1,5 @@
 ---
-import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
-const { banner } = Astro.props;
-const { title, sekolah, button, image, content } = banner;
 ---
 
 <section class="section banner relative">
@@ -13,7 +10,7 @@ const { title, sekolah, button, image, content } = banner;
       <Image
       class="w-full object-contain"
       alt="banner"
-      src={image}
+      src="/images/banner-img.webp"
       loading="eager"
       width={603}
       height={396}
@@ -23,17 +20,18 @@ const { title, sekolah, button, image, content } = banner;
       </div>
 
       <div class="lg:col-6">
-        <h1 class="banner-title lg:text-left text-center" set:html={markdownify(title)} />
-        <p class="mt-6 lg:text-left text-center" set:html={markdownify(content)} />
+        <h1 class="banner-title lg:text-left text-center">
+          Halo, Selamat Datang!<br>We Are MANSABA👋🏻
+        </h1>
+        <p class="mt-6 lg:text-left text-center">
+          Madrasah hebat pencetak generasi - generasi hebat
+        </p>
+
 
           <div class="lg:text-left text-center">
-            {
-              button.enable && (
-                <a class="btn btn-primary mt-8" href={button.link}>
-                  {button.label}
+                <a class="btn btn-primary mt-8" href="https://ppdb.manubanyuputih.id">
+                  Yuu daftar
                 </a>
-              )
-            }
           </div>
 
       </div>
