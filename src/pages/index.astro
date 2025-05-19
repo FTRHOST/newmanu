@@ -8,6 +8,8 @@ import Cta from "@/layouts/partials/Cta.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
+import Videop from "src/layouts/VideoProfile.astro"
+
 const homepage = (await getEntry(
   "homepage",
   "-index"
@@ -17,6 +19,7 @@ const { banner, key_features, service, testimonial } = homepage.data;
 
 <Base image="/images/banner-img.webp" description="Sekolah ramah anak heheyyyyy - preview new mansaba">
   <Banner banner={banner} />
+  <Videop />
   <!-- <KeyFeatures key_features={key_features} /> -->
   <!-- <Service service={service} /> -->
   <!-- <Testimonial testimonial={testimonial} /> -->

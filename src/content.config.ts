@@ -7,7 +7,6 @@ const homepageCollection = defineCollection({
   schema: z.object({
     banner: z.object({
       title: z.string(),
-      sekolah: z.string(),
       content: z.string().optional(),
       image: z.string(),
       button: z

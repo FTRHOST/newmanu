@@ -1,7 +1,10 @@
 header {
   @apply sticky top-0 z-50 bg-[#ededed] py-6 transition-all duration-300 lg:bg-transparent;
-  
 }
+
+/* header.header-hidden {
+  @apply -translate-y-full transition-transform duration-300;
+} */
 
 /* .header-sticky {
   @apply bg-white shadow;
@@ -21,6 +24,10 @@ header {
   @apply relative flex flex-wrap items-center justify-between;
 }
 
+/* .navbar .container {
+ @apply w-full;
+} */
+
 
 .navbar-brand {
   @apply text-xl font-semibold text-text-dark;
@@ -36,6 +43,7 @@ header {
 .nav-link {
   /* @apply block p-3 py-2 text-[15px] text-text-dark transition hover:text-primary md:px-2 lg:inline-block; */
   @apply block p-3 py-2 text-[16px] font-medium text-text-dark transition md:px-2 lg:inline-block;
+  
 
   &.active {
     @apply relative font-semibold bg-gradient-to-br from-[#2A7B9B] to-[#57C785] text-transparent bg-clip-text;

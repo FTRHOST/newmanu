@@ -282,7 +282,7 @@ select:invalid {
 }
 
 .video-play-btn {
-  @apply absolute left-1/2 top-1/2 z-10 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-primary cursor-pointer;
+  @apply absolute left-1/2 top-1/2 z-10 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient cursor-pointer;
   animation: shadow-pulse 1.5s infinite;
 }
 
@@ -297,7 +297,7 @@ select:invalid {
 
 @keyframes shadow-pulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(254, 96, 25, 0.7);
+    box-shadow: 0 0 0 0px rgba(87, 199, 133, 0.7);
   }
   70% {
     box-shadow: 0 0 0 35px rgba(254, 96, 25, 0);
@@ -309,7 +309,7 @@ select:invalid {
 
 @keyframes shadow-pulse-2 {
   0% {
-    box-shadow: 0 0 0 0px rgba(254, 96, 25, 0.7);
+    box-shadow: 0 0 0 0px rgba(42, 123, 155, 0.7);
   }
   70% {
     box-shadow: 0 0 0 20px rgba(254, 96, 25, 0);

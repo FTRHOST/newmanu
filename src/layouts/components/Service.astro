@@ -1,76 +1,117 @@
 ---
+// Import komponen HomepageTab untuk menampilkan tab di halaman utama
 import HomepageTab from "@/layouts/function-components/HomepageTab";
+// Import komponen VideoComponent untuk menampilkan video
 import VideoComponent from "@/layouts/function-components/VideoComponent";
+// Import komponen Image dari Astro untuk menampilkan gambar yang dioptimalkan
 import { Image } from "astro:assets";
+// Import tipe CollectionEntry dari Astro content collections untuk mengetik data
 import type { CollectionEntry } from "astro:content";
+// Import ikon AiFillCheckCircle dari react-icons untuk daftar fitur
 import { AiFillCheckCircle } from "react-icons/ai";
 
+// Definisikan tipe Props untuk komponen ini
+// service adalah properti yang diharapkan, yang bertipe data "service" dari entri koleksi "homepage"
 type Props = {
   service: CollectionEntry<"homepage">["data"]["service"];
 };
+// Ambil properti "service" dari Astro.props
 const { service } = Astro.props;
+// Destruktur properti homepage_tab dan our_service dari objek service
 const { homepage_tab, our_service } = service;
 ---
 
+// Bagian utama dari komponen, sebuah section HTML dengan class "section services"
 <section class="section services">
+  // Wadah untuk membatasi lebar konten
   <div class="container">
+    // Komponen HomepageTab untuk menampilkan tab, dimuat di sisi klien menggunakan client:load
     <HomepageTab client:load homepage_tab={homepage_tab} />
     {
+      // Iterasi melalui array our_service dan render setiap item
       our_service.map((item, index) => (
+        // Div dengan class grid dan padding, serta perataan vertikal tengah
         <div class="gx-5 row mt-12 items-center lg:mt-0">
+          // Div untuk gambar atau video, lebar kolom bervariasi tergantung indeks
           <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
-            {item.image && (
-              <div class="relative">
-                <Image
-                  class="w-full object-contain"
-                  alt="service"
-                  width={667}
-                  height={498}
-                  src={item.image}
+            {
+              // Jika item memiliki properti image, tampilkan gambar
+              item.image && (
+                // Div relatif untuk memposisikan elemen absolut di dalamnya
+                <div class="relative">
+                  // Komponen Image dari Astro untuk menampilkan gambar yang dioptimalkan
+                  <Image
+                    class="w-full object-contain"
+                    alt="service"
+                    width={667}
+                    height={498}
+                    src={item.image}
+                  />
+                  // Gambar dekoratif yang diposisikan absolut
+                  <Image
+                    class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
+                    src="/images/shape-2.png"
+                    alt=""
+                    height={147}
+                    width={151}
+                  />
+                </div>
+              )
+            }
+            {
+              // Jika item memiliki properti video, tampilkan komponen VideoComponent
+              item.video && (
+                // Komponen VideoComponent, dimuat di sisi klien menggunakan client:load
+                <VideoComponent
+                  client:load
+                  src={item.video.thumbnail}
+                  height={370}
+                  width={700}
+                  title={item.title}
+                  video_id={item.video.video_id} 
+                  video_width="w-[700px]" 
+                  video_height="h-[370px]" 
                 />
-                <Image
-                  class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-                  src="/images/shape-2.png"
-                  alt=""
-                  height={147}
-                  width={151}
-                />
-              </div>
-            )}
-            {item.video && (
-              <VideoComponent
-                client:load
-                src={item.video.thumbnail}
-                height={370}
-                width={700}
-                title={item.title}
-                video_id={item.video.video_id}
-                video_width="w-[700px]"
-                video_height="h-[370px]"
-              />
-            )}
+              )
+            }
           </div>
+          // Div untuk deskripsi layanan, lebar kolom bervariasi tergantung indeks
           <div
             class={`mt-6 lg:col-5 lg:mt-0 ${
               index % 2 === 0 ? "order-1" : "order-0"
             }`}
           >
+            // Wadah untuk teks deskripsi
             <div class="text-container">
+              // Judul layanan
               <h2 class="lg:text-4xl">{item.title}</h2>
+              // Deskripsi layanan
               <p class="mt-4">{item.description}</p>
-              {item.button && item.button.enable && (
-                <a class="btn btn-white mt-6" href={item.button.link}>
-                  {item.button.label}
-                </a>
-              )}
+              {
+                // Jika item memiliki tombol dan tombol diaktifkan, tampilkan tautan tombol
+                item.button &&
+                  item.button.enable && (
+                    // Tautan tombol
+                    <a class="btn btn-white mt-6" href={item.button.link}>
+                      {item.button.label}
+                    </a>
+                  )
+              }
+              // Daftar fitur layanan
               <ul class="mt-6 text-text-dark lg:-ml-4">
-                {item.list &&
-                  item.list.map((list) => (
-                    <li class="mb-2 flex items-center rounded px-4">
-                      <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
-                      {list}
-                    </li>
-                  ))}
+                {
+                  // Jika item memiliki daftar fitur, iterasi dan render setiap fitur
+                  item.list &&
+                    item.list.map((list) => (
+                      // Item daftar dengan ikon centang
+                      <li class="mb-2 flex items-center rounded px-4">
+                        // Ikon centang
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        // Teks fitur
+                        {list}
+                      </li>
+                    ))
+                }
               </ul>
             </div>
           </div>
