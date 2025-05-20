@@ -17,8 +17,10 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand block">
+<a href="/" class="navbar-brand block flex items-center">
   {
+    <>
+      {
     src || logo ? (
       <Image
         width={logo_width.replace("px", "") * 2}
@@ -36,5 +38,8 @@ const {
     ) : (
       title
     )
+      }
+      <span class="ml-2">MA NU 01 BANYUPUTIH</span>
+    </>
   }
 </a>

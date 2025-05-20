@@ -4,19 +4,8 @@ import { defineCollection, z } from "astro:content";
 // Homepage Collection Schema
 const homepageCollection = defineCollection({
   loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/homepage" }),
+
   schema: z.object({
-    banner: z.object({
-      title: z.string(),
-      content: z.string().optional(),
-      image: z.string(),
-      button: z
-        .object({
-          label: z.string(),
-          link: z.string(),
-          enable: z.boolean().default(true),
-        })
-        .optional(),
-    }),
     key_features: z.object({
       title: z.string(),
       description: z.string(),
