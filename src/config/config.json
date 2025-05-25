@@ -4,8 +4,8 @@
     "base_url": "https://new.manubanyuputih.id",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/favicon.png",
+    "favicon": "/images/favicon.svg",
+    "logo": "/images/favicon.svg",
     "logo_width": "31",
     "logo_height": "31",
     "logo_text": "manubanyuputih"

@@ -13,6 +13,16 @@ body {
   border-color: #007bff;
 } */
 
+@font-face {
+  font-family: 'Mont Heavy DEMO'; /* Beri nama font Anda */
+  src: url('public/fonts/Mont-HeavyDEMO.woff') format('woff'); /* Sesuaikan path dan format */
+}
+
+/* Gunakan font pada elemen HTML Anda */
+h1 {
+  font-family: 'Mont Heavy DEMO', sans-serif; /* Tambahkan font fallback */
+}
+
 h1,
 h2,
 h3,
