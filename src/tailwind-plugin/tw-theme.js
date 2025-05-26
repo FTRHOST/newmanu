@@ -63,6 +63,7 @@ const calculateFontSizes = (base, scale) => {
   }
   sizes.base = `${base}px`;
   sizes["base-sm"] = `${base * 0.8}px`;
+  sizes["xl"] = "1.20rem"; // This is 20px
   return sizes;
 };
 const fontSizes = calculateFontSizes(baseSize, scale);

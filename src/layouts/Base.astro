@@ -38,6 +38,7 @@ const { title, meta_title, description, image, imageH, imageW, noindex, canonica
     <link rel="icon" type="image/png" sizes="32x32" href={config.site.favicon}>
     <link rel="icon" type="image/png" sizes="16x16" href={config.site.favicon}>
     <link rel="icon" href={config.site.favicon}>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- theme meta -->
     <meta name="theme-name" content="pinwheel-astro" />
     <meta name="msapplication-TileColor" content="#000000" />
@@ -173,5 +174,13 @@ const { title, meta_title, description, image, imageH, imageW, noindex, canonica
       <slot />
     </main>
     <Footer />
+
+    <script is:inline src="/js/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/js/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+      })
+    </script>
   </body>
 </html>
