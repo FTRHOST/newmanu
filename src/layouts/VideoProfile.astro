@@ -1,47 +1,45 @@
 ---
-// Import komponen VideoComponent untuk menampilkan video
-import VideoComponent from "@/layouts/function-components/VideoComponent";
+// src/pages/index.astro atau komponen Astro Anda yang lain
 import { AiFillCheckCircle } from "react-icons/ai";
+import VideoPlayer from "../layouts/function-components/VideoPlayer";
+
+const videoSrc = "/videos/project_mariner__ui-demo_a_16-9.mp4";
+const posterSrc =
+  "https://lh3.googleusercontent.com/-YVvFKf5Lp8usirMS-Scu_tK9-0t2-CTShcenxfgTmWSHMFDuIG93-POZwxi6EPKYc3v8dfxWd75goRopAsCofU3qdyOr3JDwgnuL3yFp9yFrRsu=w2140-rw";
 ---
 
 <section class="section videoProfile relative">
-    <div class="container mt-8">
-        <div class="row ">
-             <div class="lg:col-6 lg:order-2 order-1" data-aos="fade-up">
-            <VideoComponent
-            client:load
-            src='images/banner-img.webp'
-            height={370}
-            width={700}
-            title="MA NU 01 Banyuputih"
-            video_id="Vc4LI5tr2G8" 
-            video_width="w-[700px]" 
-            video_height="h-[370px]" 
-          />
-        </div>
-            <div class="lg:col-6 lg:order-1 order-2">
-                <h1 class="banner-title lg:text-left text-center mt-6" data-aos="fade-up"
-                data-aos-duration="1000">
-                    Mengapa harus kita?
-                </h1>
-                <p class="mt-6 lg:text-left text-justify" data-aos="fade-up"
-                data-aos-duration="1500">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, beatae eos. Excepturi minima in numquam voluptates, mollitia, vero nulla ab id modi quisquam exercitationem! A possimus doloribus quia dolorum architecto?
-                </p>
-                <ul class="mt-6" data-aos="fade-up"
-                data-aos-duration="1550">
-                    <li class="mb-2 flex items-center rounded px-4">
-                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
-                        Fasilitas lengkap
-                    </li>
-                    <li class="mb-2 flex items-center rounded px-4">
-                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
-                        Baju free 4 setelan
-                    </li>
-                </ul>
-                
-        </div>
-        
+  <div class="container mt-8">
+    <div class="row ">
+      <div class="lg:col-6 lg:order-2 order-1" data-aos="fade-up">
+        <VideoPlayer videoSrc={videoSrc} posterSrc={posterSrc} client:load />
+      </div>
+      <div class="lg:col-6 lg:order-1 order-2">
+        <h1 class="banner-title lg:text-left text-center mt-6" data-aos="fade-up" data-aos-duration="1000">
+          Mengapa harus kita?
+        </h1>
+        <p class="mt-6 lg:text-left text-center" data-aos="fade-up" data-aos-duration="1500">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, beatae eos.
+          Excepturi minima in numquam voluptates, mollitia, vero nulla ab id modi quisquam
+          exercitationem! A possimus doloribus quia dolorum architecto?
+        </p>
+        <ul class="mt-6" data-aos="fade-up" data-aos-duration="1550">
+          <li class="mb-2 flex items-center rounded px-4">
+            <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+            Fasilitas lengkap
+          </li>
+          <li class="mb-2 flex items-center rounded px-4">
+            <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+            Baju free 4 setelan
+          </li>
+        </ul>
+      </div>
     </div>
-
+    <style>
+      video {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </div>
 </section>
