@@ -1,0 +1,242 @@
+---
+// Data for the scrollable slides
+// Image paths are corrected assuming they are in `public/images/promin/`
+const slidesData = [
+    {
+        tag: "MIPA",
+        heading: "Matematika dan Ilmu Pengetahuan Alam.",
+        paragraph: "Program Peminatan MIPA merupakan salah satu program peminatan yang ada di MA NU 01 Banyuputih. Selain kelas formal yang ada di jam Kegiatan Belajar Mengajar (KBM), ada juga beberapa kegiatan yang menunjang akademik maupun non akademik. Beberapa program kerja di Program Peminatan MIPA juga menghasilkan produk yang beorientasi pada sainterpreunership.",
+        imageUrl: "/images/promin/IPA_web-1020x1024.webp",
+        imageAlt: "MIPA IMAGE"
+    },
+    {
+        tag: "IPS",
+        heading: "Ilmu Pengetahuan Sosial",
+        paragraph: "Secara singkat Peminatan IPS di Madrasah Aliyah adalah sebuah wadah bagi mereka yang tertarik dan ingin mempelajari tentang hubungan antar manusia dan hubungan antara manusia dengan lingkungannya, serta berbagai aspek sosial lainnya melalui berbagai mata pelajarannya, yaitu Ekonomi, Sejarah, Geografi dan Sosiologi.",
+        imageUrl: "/images/promin/IPS_web-729x1024.webp", // Corrected path
+        imageAlt: "IPS IMAGE"
+    },
+    {
+        tag: "AGM",
+        heading: "Agama",
+        paragraph: "Dalam perkembangannya, madrasah mengalami transformasi seiring dengan perkembangan sosial, politik, dan budaya masyarakat Indonesia. Dewasa ini, madrasah telah bertransformasi layaknya sekolah. Walaupun demikian, madrasah tidak meninggalkan ciri khasnya sebagai lembaga pendidikan yang concern pada pendidikan agama. Untuk menampung keinginan sebagian masyarakat yang menghendaki pendidikan keagamaan, madrasah melakukan diversifikasi program. Salah satunya adalah madrasah keagamaan pada jenjang aliyah.",
+        imageUrl: "/images/promin/AGAMA_webb.webp", // Corrected path
+        imageAlt: "Agama IMAGE"
+    },
+    {
+        tag: "BHS",
+        heading: "Bahasa",
+        paragraph: "Dalam Peminatan Bahasa dan Budaya ini diajarkan berbagai macam bahasa dan sastranya. Bahasa Arab, Bahasa Ingris, Sastra Indonesia, Sastra Inggris, Sastra Arab (Arabiah Maasiroh) dalam peminatan Bahasa dan Budaya diajarkan lebih mendalam dan termasuk mata pelajaran Pendalaman Minat. Program Peminatan Bahasa dan Budaya juga meng-inisiasi adanya Kegiatan Bulan Bahasa pada setiap Bulan Oktober dengan beragam acara bagi peserta didik dan segenap civitas akademika MA NU 01 Banyuputih.",
+        imageUrl: "/images/promin/BAHASA_2.webp", // Corrected path
+        imageAlt: "Bahasa"
+    }
+];
+---
+
+<!-- Section 1: Program Peminatan Hero (original styling) -->
+<section class="section bg-[#d8f3eb] rounded-t-[40px] ">
+    <div class="container mx-auto px-4">
+        <h1
+            class="text-center font-bold text-3xl sm:text-5xl mb-4"
+            data-aos="fade-up"
+            data-aos-duration="800"
+        >
+            Program Peminatan di <span class="text-gradient">MA NU 01 Banyuputih</span>
+        </h1>
+        <div
+            class="text-center mb-8 md:mb-12"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+        >
+            <a class="btn btn-primary" href="https://ppdb.manubanyuputih.id">
+              Pelajari lebih lanjut!
+            </a>
+        </div>
+    </div>
+    <div
+        class="horizontal-scroll-container"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="300"
+    >
+        {slidesData.map((slide, index) => (
+            <div
+                class="scroll-slide"
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={100 * index}
+                data-aos-anchor=".horizontal-scroll-container" 
+            >
+                <div class="slide-content-wrapper">
+                    <div class="slide-text-content">
+                        {/* <span class="slide-tag">{slide.tag}</span> */}
+                        <h1 class="slide-heading">{slide.heading}</h1>
+                        <p class="slide-paragraph">{slide.paragraph}</p>
+                    </div>
+                    <div class="slide-image-content">
+                        <img src={slide.imageUrl} alt={slide.imageAlt} class="slide-image" />
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+
+    /* Styling for the new scrollable showcase section */
+    .features-showcase-section {
+        /* Background is set by Tailwind class bg-[#f3eefc] */
+    }
+
+    .horizontal-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 30px; /* Space between slides */
+        padding: 0 40px; /* Allows peeking of slides at edges and creates margin */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        /* Consider adding scroll-snap for better UX if desired */
+        /* scroll-snap-type: x mandatory; */
+    }
+
+    /* Hide scrollbar */
+    .horizontal-scroll-container::-webkit-scrollbar { display: none; }
+    .horizontal-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .scroll-slide {
+        flex: 0 0 calc(100vw - 80px); /* Card takes full width minus horizontal padding */
+        max-width: 800px; /* Ensure it doesn't exceed container width */
+        min-height: 450px; /* Minimum height to ensure consistency */
+        border-radius: 24px;
+        background: rgba(243, 238, 252, 0.5); /* Semi-transparent background */
+        display: flex; /* For internal flex layout */
+        overflow: hidden; /* Important for border-radius */
+        /* scroll-snap-align: start; */ /* If using scroll-snap */
+        box-shadow: 0 8px 25px rgba(110, 80, 170, 0.1); /* Subtle purple-ish shadow */
+    }
+
+    .slide-content-wrapper {
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        display: flex;
+        flex-direction: column-reverse; /* Text left, image right on desktop */
+        width: 100%;
+        padding: 32px 40px;
+        gap: 28px; /* Gap between text and image columns */
+        align-items: center; /* Vertically align content */
+    }
+
+    .slide-text-content {
+        flex: 1 1 60%; /* Text content takes more space */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Vertically center text block */
+        align-self: stretch; /* Allow it to take full height */
+
+    }
+
+    .slide-tag {
+        display: inline-block;
+        background-color: #dff9f0; /* Light purple tag background */
+        color: #1b5b5c; /* Darker purple tag text */
+        padding: 6px 14px;
+        border-radius: 16px; /* Pill shape */
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        align-self: center; /* Align to the start of the text block */
+    }
+
+    .slide-heading {
+        font-size: 1.75rem; /* Adjust as needed for visual balance */
+        font-weight: 700;
+        color: #2d3748; /* Dark gray for heading */
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .slide-paragraph {
+        font-size: 0.9rem;
+        color: #4a5568; /* Medium gray for paragraph */
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .slide-image-content {
+        flex: 1 1 40%; /* Image content */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%; /* Attempt to fill height */
+        max-height: 330px; /* Max height for the image container area */
+    }
+
+    .slide-image {
+        max-width: 100%;
+        max-height: 100%; /* Image fills its container's height */
+        width: auto; /* Maintain aspect ratio if height is constrained */
+        border-radius: 16px; /* Rounded corners for the image itself */
+        object-fit: contain; /* Ensures entire image is visible without cropping */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) { /* Tablet */
+        .scroll-slide {
+            flex-basis: 90vw; /* Slides take more width */
+            min-height: 380px;
+        }
+        .slide-heading { font-size: 1.6rem; }
+        .slide-paragraph { font-size: 0.875rem; }
+        .slide-content-wrapper { padding: 28px 32px; }
+    }
+
+    @media (max-width: 768px) { /* Mobile */
+        .features-showcase-section .showcase-title { /* Target title in this section */
+            font-size: 1.8rem; /* Adjust title size */
+            margin-bottom: 32px;
+        }
+        .scroll-slide {
+            flex: 0 0 calc(100vw - 40px); /* Card takes full width minus reduced horizontal padding */
+        }
+        .horizontal-scroll-container {
+            padding: 0 20px; /* Reduced horizontal padding on mobile */
+            gap: 20px;
+            flex-basis: 90vw; /* Keep slides wide */
+            min-height: auto; /* Let content determine height */
+        }
+        .slide-content-wrapper {
+            flex-direction: column; /* Stack image and text */
+            padding: 24px;
+            align-items: center; /* Center items in stacked layout */
+        }
+        .slide-text-content {
+            order: 2; /* Text below image */
+            text-align: center; /* Center text content */
+            width: 100%; /* Take full width */
+            align-items: center; /* Center tag within text block */
+        }
+        .slide-tag {
+            /* align-self: center; Implicitly centered now */
+        }
+        .slide-heading {
+            font-size: 1.4rem;
+            /* text-align: center; Implicitly centered now */
+        }
+        .slide-paragraph {
+            font-size: 0.85rem;
+            /* text-align: center; Implicitly centered now */
+            margin-bottom: 0;
+        }
+        .slide-image-content {
+            order: 1; /* Image above text */
+            margin-bottom: 20px; /* Space between image and text */
+            width: 100%; /* Full width for image container */
+            max-height: 240px; /* Constrain image area height on mobile */
+            height: auto;
+        }
+        .slide-image {
+            /* max-height will be constrained by its container */
+        }
+    }
+</style>

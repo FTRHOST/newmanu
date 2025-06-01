@@ -1,0 +1,80 @@
+---
+import VideoComponent from "@/layouts/function-components/VideoComponent";
+import { AiFillCheckCircle } from "react-icons/ai";
+---
+
+<section class="section videoProfile relative">
+    <div class="container mt-8">
+        <div class="row relative">
+
+             <div class="lg:col-6 lg:order-2 order-1" data-aos="fade-up">
+            <!-- <VideoComponent
+            video_id="Vc4LI5tr2G8"
+          /> -->
+
+          <video class="rounded-[40px]" muted="" playsinline="" loop="" width="1920" height="1080" poster="https://lh3.googleusercontent.com/-YVvFKf5Lp8usirMS-Scu_tK9-0t2-CTShcenxfgTmWSHMFDuIG93-POZwxi6EPKYc3v8dfxWd75goRopAsCofU3qdyOr3JDwgnuL3yFp9yFrRsu=w2140-rw" autoplay="">
+            <source src="/videos/project_mariner__ui-demo_a_16-9.mp4" type="video/mp4">
+          </video>
+
+        </div>
+            <div class="lg:col-6 lg:order-1 order-2">
+                <h1 class="banner-title lg:text-left text-center mt-6" data-aos="fade-up"
+                data-aos-duration="1000">
+                    Mengapa harus kita?
+                </h1>
+                <p class="mt-6 lg:text-left text-center" data-aos="fade-up"
+                data-aos-duration="1500">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, beatae eos. Excepturi minima in numquam voluptates, mollitia, vero nulla ab id modi quisquam exercitationem! A possimus doloribus quia dolorum architecto?
+                </p>
+                <ul class="mt-6" data-aos="fade-up"
+                data-aos-duration="1550">
+                    <li class="mb-2 flex items-center rounded px-4">
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        Fasilitas lengkap
+                    </li>
+                    <li class="mb-2 flex items-center rounded px-4">
+                        <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
+                        Baju free 4 setelan
+                    </li>
+                </ul>
+
+        </div>
+
+    </div>
+    	<!-- Add a pause button -->
+		<button id="pauseButton" class="absolute bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-full">
+			Pause
+		</button>
+    <style>
+		#pauseButton {
+			z-index: 10; /* Ensure the button is above the video */
+		}
+
+		/* Style for the button when clicked (optional) */
+		#pauseButton:active {
+			background-color: #6b7280; /* Darker gray on click */
+		}
+
+
+
+        video {
+            width: 100%;
+        }
+      </style>
+</section>
+
+
+<script>
+	const video = document.querySelector('.videoProfile video');
+	const pauseButton = document.getElementById('pauseButton');
+
+	pauseButton.addEventListener('click', () => {
+		if (video.paused) {
+			video.play();
+			pauseButton.textContent = 'Pause';
+		} else {
+			video.pause();
+			pauseButton.textContent = 'Play';
+		}
+	});
+</script>

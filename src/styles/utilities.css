@@ -17,5 +17,5 @@
 /* text gradient */
 
 @utility text-gradient {
-  @apply bg-gradient
+  @apply bg-gradient-to-br from-[#2A7B9B] to-[#57C785] text-transparent bg-clip-text
 }

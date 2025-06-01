@@ -1,15 +1,12 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Banner from "@/layouts/components/Banner.astro";
-import KeyFeatures from "@/layouts/components/KeyFeatures.astro";
-import Service from "@/layouts/components/Service.astro";
-import Testimonial from "@/layouts/components/Testimonial.astro";
 import Cta from "@/layouts/partials/Cta.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
-import AnimatedContent from "src/layouts/components/react/AnimatedContent/AnimatedContent.jsx"
 
 import Videop from "src/layouts/VideoProfile.astro"
+import Promin from "src/layouts/components/Promin.astro"
 
 const homepage = (await getEntry(
   "homepage",
@@ -18,13 +15,12 @@ const homepage = (await getEntry(
 const { key_features, service, testimonial } = homepage.data;
 ---
 
-<Base image="/images/banner-img.webp" description="Sekolah ramah anak heheyyyyy - preview new mansaba">
+<Base image="/images/banner-img.webp" description="Interface Website Baru MA NU 01 Banyuputih">
 
   <Banner />
-<Videop />
-<!-- <KeyFeatures key_features={key_features} /> -->
-<!-- <Service service={service} /> -->
-<!-- <Testimonial testimonial={testimonial} /> -->
+  <Videop />
+  <Promin />
+
 <Cta />
 
 </Base>

@@ -21,25 +21,25 @@ const { service } = Astro.props;
 const { homepage_tab, our_service } = service;
 ---
 
-// Bagian utama dari komponen, sebuah section HTML dengan class "section services"
+
 <section class="section services">
-  // Wadah untuk membatasi lebar konten
+
   <div class="container">
-    // Komponen HomepageTab untuk menampilkan tab, dimuat di sisi klien menggunakan client:load
+  
     <HomepageTab client:load homepage_tab={homepage_tab} />
     {
       // Iterasi melalui array our_service dan render setiap item
       our_service.map((item, index) => (
         // Div dengan class grid dan padding, serta perataan vertikal tengah
         <div class="gx-5 row mt-12 items-center lg:mt-0">
-          // Div untuk gambar atau video, lebar kolom bervariasi tergantung indeks
+    
           <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
             {
               // Jika item memiliki properti image, tampilkan gambar
               item.image && (
                 // Div relatif untuk memposisikan elemen absolut di dalamnya
                 <div class="relative">
-                  // Komponen Image dari Astro untuk menampilkan gambar yang dioptimalkan
+ 
                   <Image
                     class="w-full object-contain"
                     alt="service"
@@ -47,7 +47,7 @@ const { homepage_tab, our_service } = service;
                     height={498}
                     src={item.image}
                   />
-                  // Gambar dekoratif yang diposisikan absolut
+ 
                   <Image
                     class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
                     src="/images/shape-2.png"
@@ -75,17 +75,17 @@ const { homepage_tab, our_service } = service;
               )
             }
           </div>
-          // Div untuk deskripsi layanan, lebar kolom bervariasi tergantung indeks
+
           <div
             class={`mt-6 lg:col-5 lg:mt-0 ${
               index % 2 === 0 ? "order-1" : "order-0"
             }`}
           >
-            // Wadah untuk teks deskripsi
+ 
             <div class="text-container">
-              // Judul layanan
+
               <h2 class="lg:text-4xl">{item.title}</h2>
-              // Deskripsi layanan
+ 
               <p class="mt-4">{item.description}</p>
               {
                 // Jika item memiliki tombol dan tombol diaktifkan, tampilkan tautan tombol
@@ -97,7 +97,7 @@ const { homepage_tab, our_service } = service;
                     </a>
                   )
               }
-              // Daftar fitur layanan
+
               <ul class="mt-6 text-text-dark lg:-ml-4">
                 {
                   // Jika item memiliki daftar fitur, iterasi dan render setiap fitur
@@ -105,9 +105,9 @@ const { homepage_tab, our_service } = service;
                     item.list.map((list) => (
                       // Item daftar dengan ikon centang
                       <li class="mb-2 flex items-center rounded px-4">
-                        // Ikon centang
+ 
                         <AiFillCheckCircle className="mr-3 fill-(--color-primary) text-white" />
-                        // Teks fitur
+ 
                         {list}
                       </li>
                     ))
